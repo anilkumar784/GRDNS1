@@ -76,6 +76,53 @@
     border-radius: 15px;
     box-shadow: 0 8px 15px rgba(58, 141, 87, 0.3);
   }
+
+  /* New pricing styles */
+  .service-pricing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  .service-item {
+    background: #e6f0e9;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1 1 280px;
+    box-shadow: 0 6px 15px rgba(58, 141, 87, 0.2);
+    text-align: center;
+    color: #2e4f29;
+  }
+  .service-item img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  .service-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  .service-item p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .service-price {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #3a8d57;
+  }
+
+  @media (max-width: 700px) {
+    .service-pricing {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
   footer {
     text-align: center;
     background: #3a8d57;
@@ -113,6 +160,41 @@
   </nav>
 </header>
 <main>
+  <section id="gardening-services">
+    <h2>Gardening Services at Your Doorstep</h2>
+    <p>At Beautiful Gardens, we bring professional gardening expertise right to your home. Whether you desire a lush backyard makeover, routine garden maintenance, or expert advice tailored to your unique outdoor space, our dedicated team is ready to help you flourish.</p>
+    <p>Our doorstep gardening services provide you with convenient and personalized care, saving you time and effort while transforming your garden into a vibrant sanctuary. From planting seasonal flowers to trimming hedges and pest management, we handle it all with passion and precision.</p>
+    <p>Booking our services is simple – just reach out through our Contact page or give us a call. Our experts will assess your gardening needs and schedule visits at times that suit your lifestyle, ensuring your garden stays healthy and beautiful year-round.</p>
+    <div class="img-container">
+      <img src="garden3.png" alt="Gardener providing garden service at doorstep" />
+    </div>
+    <p>Experience the joy of a flourishing garden without the hassle – let Beautiful Gardens handle the hard work while you enjoy your serene outdoor retreat.</p>
+
+    <h3>Our Gardening Services &amp; Pricing</h3>
+    <div class="service-pricing">
+      <div class="service-item">
+        <img src="garden4.png" alt="Garden Maintenance" />
+        <h3>Garden Maintenance</h3>
+        <p>Regular upkeep including mowing, weeding, pruning, and seasonal cleanup to keep your garden neat and thriving.</p>
+        <p class="service-price">$75 per visit</p>
+      </div>
+      <div class="service-item">
+        <img src="planting.png" alt="Planting & Landscaping" />
+        <h3>Planting &amp; Landscaping</h3>
+        <p>Design and plant flower beds, shrubs, or vegetable patches to enhance your garden’s beauty and productivity.</p>
+        <p class="service-price">Starting at $150 per project</p>
+      </div>
+      <div class="service-item">
+        <img src="pest.png" alt="Pest Control" />
+        <h3>Pest Management</h3>
+        <p>Eco-friendly pest control solutions to keep your plants safe from harmful insects and diseases.</p>
+        <p class="service-price">$60 per treatment</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The rest of your sections unchanged -->
+
   <section id="garden-types">
     <h2>Discover the Different Types of Gardens</h2>
     <p>Gardens offer a serene escape where nature and creativity come together. Whether you want a small balcony oasis or a sprawling backyard retreat, understanding different garden types helps you design the perfect natural sanctuary. There are many varieties of gardens, each suited to different styles, climates, and personal preferences.</p>
@@ -121,7 +203,7 @@
     <p><strong>Japanese Gardens</strong> combine tranquility and symbolism using rocks, water features, and minimalistic plant choices like bonsai and bamboo. The purpose is to create a meditative space that reflects the beauty of nature’s balance.</p>
     <p><strong>Vegetable or Kitchen Gardens</strong> focus on growing fresh fruits, herbs, and vegetables. These gardens are practical and sustainable, providing nourishing food while also beautifying outdoor space with green foliage and colorful produce.</p>
     <div class="img-container">
-      <img src="garden4.png" alt="Beautiful garden with flowers and pathways"/>
+      <img src="garden1.png" alt="Beautiful garden with flowers and pathways"/>
     </div>
     <p>Choosing the right garden type depends on your lifestyle, space, and how much time you want to dedicate to upkeep. Gardens can also be combined creatively to reflect your unique taste.</p>
   </section>
@@ -135,7 +217,7 @@
     <p><strong>Mulching:</strong> Apply a layer of mulch around plants to retain moisture, deter weeds, and improve soil health. Organic mulches also add nutrients as they decompose.</p>
     <p><strong>Pruning and Deadheading:</strong> Regularly prune dead or overgrown branches and remove spent flowers to encourage new growth and maintain your garden’s health and appearance.</p>
     <div class="img-container">
-      <img src="garden1.png" alt="Gardener's hands planting in soil"/>
+      <img src="planting.png" alt="Gardener's hands planting in soil"/>
     </div>
     <p>Remember, patience is key. Gardens take time to mature, and your efforts will be richly rewarded with beauty and bounty.</p>
   </section>
