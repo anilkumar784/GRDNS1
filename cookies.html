@@ -87,6 +87,55 @@
     color: #3a8d57;
     text-decoration: underline;
   }
+  /* Cookie consent styles */
+  #cookieConsent {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: #3a8d57;
+    color: #f0f5f1;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    z-index: 9999;
+    animation: slideUp 0.5s ease forwards;
+  }
+  #cookieConsent p {
+    margin: 0;
+    flex: 1 1 60%;
+  }
+  #cookieConsent button {
+    background: #f0f5f1;
+    border: none;
+    color: #3a8d57;
+    font-weight: 700;
+    padding: 10px 20px;
+    margin-left: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 0 0 auto;
+  }
+  #cookieConsent button:hover {
+    background: #d4dfd2;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   @media (max-width: 600px) {
     header h1 {
       font-size: 1.8rem;
@@ -99,6 +148,17 @@
       margin: 0 8px;
       font-size: 1rem;
     }
+    #cookieConsent {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    #cookieConsent p {
+      flex: 1 1 100%;
+    }
+    #cookieConsent button {
+      margin-left: 0;
+    }
   }
 </style>
 </head>
@@ -110,6 +170,7 @@
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms &amp; Conditions</a>
     <a href="cookies.html">Cookies Policy</a>
+    <a href="contact.html">Contact Us</a>
   </nav>
 </header>
 <main>
@@ -163,5 +224,42 @@
 <footer>
   &copy; 2024 Beautiful Gardens. All rights reserved.
 </footer>
+
+<div id="cookieConsent" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p>We use cookies to improve your experience on our site. By clicking "Accept", you consent to our use of cookies. You can choose to decline below.</p>
+  <div>
+    <button id="acceptCookies" type="button" aria-label="Accept cookies">Accept</button>
+    <button id="declineCookies" type="button" aria-label="Decline cookies">Decline</button>
+  </div>
+</div>
+
+<script>
+  const consentContainer = document.getElementById('cookieConsent');
+  const acceptBtn = document.getElementById('acceptCookies');
+  const declineBtn = document.getElementById('declineCookies');
+
+  // Check if user has already made a choice
+  function checkConsent() {
+    const consent = localStorage.getItem('cookieConsent');
+    if(consent === 'accepted' || consent === 'declined') {
+      consentContainer.style.display = 'none';
+    } else {
+      consentContainer.style.display = 'flex';
+    }
+  }
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    consentContainer.style.display = 'none';
+  });
+
+  declineBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'declined');
+    consentContainer.style.display = 'none';
+  });
+
+  // Run on page load
+  checkConsent();
+</script>
 </body>
 </html>
